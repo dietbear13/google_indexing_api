@@ -10,8 +10,8 @@ import pandas as pd
 SCOPES = ["https://www.googleapis.com/auth/indexing"]
 ENDPOINT = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
-key = 'zorini-cb1906e9dcff'
-project_name = 'zorini'
+key = 'YOUR_KEY'  # УКАЗЫВАЕМ СВОЙ КЛЮЧ
+project_name = 'YOUR_NAME'  # УКАЗЫВАЕМ НАЗВАНИЕ ПРОЕКТА
 
 
 table_with_urls_for_recrawl = pd.read_excel(f'{project_name}.xlsx')

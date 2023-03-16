@@ -41,12 +41,16 @@ def send_pages_to_google_for_recrawl(data):
         sent_urls_for_recrawl_set.add(url)
 
     sent_urls_set_len = len(sent_urls_for_recrawl_set)
+        if sent_urls_set_len != 0:
+        print(f"На переобход отправлено: {sent_urls_set_len} страниц")
+        with open(f'{project_name}_logs.txt', 'a') as file:
+            file.write(f"\n{date} — на переобход отправлено: {sent_urls_set_len} страниц")
+    else:
+        print(f"На переобход отправлено: {sent_urls_set_len} страниц")
+        with open(f'{project_name}_logs.txt', 'a') as file:
+            file.write(f"\n{date} — {sent_urls_set_len} страниц в таблице {project_name}.xlsx или сработал лимит")
 
-    # print(response['status'])
-    # print(content.decode())
-
-    print(f"На переобход отправлено: {sent_urls_set_len} страниц")
-
+   
     return sent_urls_for_recrawl_set
 
 

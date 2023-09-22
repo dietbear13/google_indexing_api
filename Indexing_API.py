@@ -78,8 +78,6 @@ def error_report():
 
 
 def export_data_to_excel(data):
-    project_report = pd.ExcelWriter(f'{project_name}.xlsx', engine='xlsxwriter')
-    data.to_excel(project_report, index=False)
-    project_report.save()
+    data.to_excel(f'{project_name}_new.xlsx', index=False)
 
 send_pages_to_google(table_with_urls_for_recrawl)

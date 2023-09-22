@@ -78,6 +78,6 @@ def error_report():
 
 
 def export_data_to_excel(data):
-    data.to_excel(f'{project_name}_result.xlsx', index=False)
+    data.to_excel(f'{project_name}.xlsx', index=False)
 
 send_pages_to_google(table_with_urls_for_recrawl)

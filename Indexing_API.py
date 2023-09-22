@@ -14,7 +14,7 @@ key = 'YOUR_KEY'  # УКАЗЫВАЕМ СВОЙ КЛЮЧ
 project_name = 'YOUR_NAME'  # УКАЗЫВАЕМ НАЗВАНИЕ ПРОЕКТА
 
 
-table_with_urls_for_recrawl = pd.read_excel(f'{project_name}.xlsx')
+table_with_urls_for_recrawl = pd.read_excel(f'{project_name}.xlsx', engine='openpyxl')
 def send_pages_to_google_for_recrawl(data):
     json_key_file = f"{key}.json"
     credentials = ServiceAccountCredentials.from_json_keyfile_name(json_key_file,

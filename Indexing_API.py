@@ -32,6 +32,7 @@ def send_pages_to_google_for_recrawl(data):
 
         response, content = http.request(ENDPOINT, method="POST",
                                          body=json.dumps(urls))
+        print(response)
 
         time.sleep(1)
 
@@ -41,6 +42,7 @@ def send_pages_to_google_for_recrawl(data):
         sent_urls_for_recrawl_set.add(url)
 
     sent_urls_set_len = len(sent_urls_for_recrawl_set)
+    print(sent_urls_for_recrawl_set)
 
     now = datetime.datetime.now()
     date = now.date()
